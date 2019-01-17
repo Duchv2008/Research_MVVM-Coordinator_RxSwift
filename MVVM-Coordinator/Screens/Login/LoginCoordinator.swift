@@ -11,13 +11,15 @@ import RxSwift
 
 class LoginCoordinator: BaseCoordinator<Void> {
     private let window: UIWindow
+    private var isHasAnimation: Bool
 
     lazy var completedLogin = PublishSubject<LoginResponse>()
     lazy var registerTrigger = PublishSubject<Void>()
     lazy var forgotPasswordTrigger = PublishSubject<Void>()
 
-    init(window: UIWindow) {
+    init(window: UIWindow, isHasAnimation: Bool = true) {
         self.window = window
+        self.isHasAnimation = isHasAnimation
     }
 
     override func start() -> Observable<Void> {
@@ -29,7 +31,8 @@ class LoginCoordinator: BaseCoordinator<Void> {
         loginViewController.viewModel = loginViewModel
 
         let navigationController = UINavigationController(rootViewController: loginViewController)
-        self.window.rootViewController = navigationController
+        self.window.set(rootViewController: navigationController,
+                        withTransition: isHasAnimation ? AppDelegate.shared?.changeViewAnimation : nil)
         self.window.makeKeyAndVisible()
 
         completedLogin

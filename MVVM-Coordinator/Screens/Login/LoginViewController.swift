@@ -12,7 +12,9 @@ import RxCocoa
 
 class LoginViewController: BaseViewController {
     @IBOutlet private weak var usernameTF: UITextField!
+    @IBOutlet private weak var usernameValidateLabel: UILabel!
     @IBOutlet private weak var passwordTF: UITextField!
+    @IBOutlet private weak var passwordValidateLabel: UILabel!
     @IBOutlet private weak var loginBtn: UIButton!
     @IBOutlet private weak var registerBtn: UIButton!
     @IBOutlet private weak var forgotPasswordBtn: UIButton!
@@ -37,6 +39,12 @@ class LoginViewController: BaseViewController {
         output.error
             .bind { error in
                 self.showErrorAlert(error.message)
+            }.disposed(by: bag)
+        output.validate
+            .bind { validate in
+                self.loginBtn.isEnabled = validate.isPass
+                self.usernameValidateLabel.text = validate.emailError
+                self.passwordValidateLabel.text = validate.passwordError
             }.disposed(by: bag)
     }
 }

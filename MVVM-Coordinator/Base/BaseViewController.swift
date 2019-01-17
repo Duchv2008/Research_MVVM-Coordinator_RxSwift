@@ -32,4 +32,8 @@ class BaseViewController: UIViewController {
 
     func setupUI() {}
     func setupRx() {}
+
+    deinit {
+        Logger.log(msg: "\(self.className) deinit")
+    }
 }

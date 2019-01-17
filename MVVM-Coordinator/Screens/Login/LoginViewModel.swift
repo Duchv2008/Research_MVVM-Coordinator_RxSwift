@@ -27,6 +27,13 @@ class LoginViewModel: BaseViewModel, ViewModelType {
     struct Output {
         let loading: Observable<Bool>
         let error: Observable<ApiError>
+        let validate: Observable<Validate>
+    }
+
+    struct Validate {
+        let isPass: Bool
+        let emailError: String
+        let passwordError: String
     }
 
     private var coordinator: LoginCoordinator!
@@ -36,6 +43,16 @@ class LoginViewModel: BaseViewModel, ViewModelType {
     }
 
     func transform(input: Input) -> Output {
+        let validation = input.dataCombine()
+            .flatMap { username, password -> Observable<Validate> in
+                let validateEmail = Validator.isValidEmail(email: username)
+                let validatePassword = Validator.isValidPassword(password: password)
+                let result = Validate(isPass: validateEmail.isValid && validatePassword.isValid,
+                                      emailError: validateEmail.description,
+                                      passwordError: validatePassword.description)
+                return Observable.just(result)
+            }
+
         input.loginTrigger
             .withLatestFrom(input.dataCombine())
             .flatMapLatest { (username, password) -> Observable<LoginResponse> in
@@ -57,7 +74,8 @@ class LoginViewModel: BaseViewModel, ViewModelType {
             .disposed(by: bag)
 
         return Output(loading: trackingIndicator.asObservable(),
-                      error: trackingError.asObservable())
+                      error: trackingError.asObservable(),
+                      validate: validation)
     }
 
     private func performRequestLogin(username: String, password: String) -> Observable<LoginResponse> {

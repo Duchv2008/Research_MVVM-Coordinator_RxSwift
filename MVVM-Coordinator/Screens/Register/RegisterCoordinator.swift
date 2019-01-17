@@ -11,12 +11,14 @@ import RxSwift
 
 class RegisterCoordinator: BaseCoordinator<Void> {
     private var window: UIWindow!
+    private var isHasAnimation: Bool
 
     var registerCompleted = PublishSubject<LoginResponse>()
     var haveAccountTrigger = PublishSubject<Void>()
 
-    init(window: UIWindow) {
+    init(window: UIWindow, isHasAnimation: Bool = true) {
         self.window = window
+        self.isHasAnimation = isHasAnimation
     }
 
     override func start() -> Observable<Void> {
@@ -29,7 +31,8 @@ class RegisterCoordinator: BaseCoordinator<Void> {
         let viewModel = RegisterViewModel(coordinator: self)
         registerViewController.viewModel = viewModel
         let registerNavigation = UINavigationController(rootViewController: registerViewController)
-        window.rootViewController = registerNavigation
+        self.window.set(rootViewController: registerNavigation,
+                        withTransition: isHasAnimation ? AppDelegate.shared?.changeViewAnimation : nil)
         window.makeKeyAndVisible()
 
         registerCompleted

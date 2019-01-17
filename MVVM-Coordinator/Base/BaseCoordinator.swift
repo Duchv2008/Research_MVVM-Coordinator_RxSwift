@@ -33,6 +33,7 @@ class BaseCoordinator<ResultType> {
     /// - Parameter coordinator: Child coordinator to store.
     private func store<T>(coordinator: BaseCoordinator<T>) {
         childCoordinators[coordinator.identifier] = coordinator
+        Logger.log(msg: "Store childCoordinators: \(childCoordinators.count) \n \(childCoordinators)")
     }
 
     /// Release coordinator from the `childCoordinators` dictionary.
