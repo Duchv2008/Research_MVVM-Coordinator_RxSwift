@@ -18,10 +18,11 @@ enum Router: URLRequestConvertible {
 
     case login(email: String, password: String)
     case refreshToken
+    case logout
 
     var method: HTTPMethod {
         switch self {
-        case .login, .refreshToken:
+        case .login, .refreshToken, .logout:
             return .post
         default:
             return .get
@@ -34,6 +35,8 @@ enum Router: URLRequestConvertible {
             return "login"
         case .refreshToken:
             return "refreshToken"
+        case .logout:
+            return "logout"
         default:
             break
         }

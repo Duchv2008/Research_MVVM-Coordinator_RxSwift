@@ -113,7 +113,6 @@ extension RequestManager {
         return self.baseRequestAPI(url: refreshUrl)
     }
 
-    /// Response json [String: Any]
     func login(userName: String, password: String) -> Observable<LoginResponse> {
         let loginUrl = Router.login(email: userName, password: password)
         return self.baseRequestAPI(url: loginUrl)
@@ -122,10 +121,10 @@ extension RequestManager {
                     return Observable.error(Constant.MappingObjectError)
                 }
                 return Observable.just(loginResponse)
-        }
+            }
+
     }
 
-    /// Response json [String: Any]
     func register(userName: String, password: String) -> Observable<LoginResponse> {
         let loginUrl = Router.login(email: userName, password: password)
         return self.baseRequestAPI(url: loginUrl)
@@ -134,6 +133,14 @@ extension RequestManager {
                     return Observable.error(Constant.MappingObjectError)
                 }
                 return Observable.just(loginResponse)
-        }
+            }
+    }
+
+    func logout() -> Observable<Void> {
+        let logoutUrl = Router.logout
+        return self.baseRequestAPI(url: logoutUrl)
+            .flatMapLatest({ _ -> Observable<Void> in
+                return Observable.just(())
+            })
     }
 }

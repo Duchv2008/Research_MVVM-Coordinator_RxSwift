@@ -11,4 +11,5 @@ import Foundation
 enum StoryboardName: String {
     case Main
     case CustomTabbar
+    case Tutorial
 }

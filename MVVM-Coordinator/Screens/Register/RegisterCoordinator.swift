@@ -38,7 +38,7 @@ class RegisterCoordinator: BaseCoordinator<Void> {
         registerCompleted
             .bind { [weak self] loginResponse in
                 guard let `self` = self else { return }
-                self.redirectToMainScreen()
+                self.redirectToTutorialScreen(in: registerNavigation)
             }.disposed(by: bag)
 
         haveAccountTrigger
@@ -51,9 +51,9 @@ class RegisterCoordinator: BaseCoordinator<Void> {
         return Observable.never()
     }
 
-    private func redirectToMainScreen() {
-        let mainCoordinator = MainCoordinator(window: self.window)
-        coordinate(to: mainCoordinator).subscribe().disposed(by: bag)
+    private func redirectToTutorialScreen(in navigation: UINavigationController) {
+        let tutorialScreen = TutorialCoordinator(navigation: navigation)
+        self.coordinate(to: tutorialScreen).subscribe().disposed(by: self.bag)
     }
 
     private func redirectToLoginScreen() {

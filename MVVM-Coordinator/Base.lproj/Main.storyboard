@@ -154,9 +154,35 @@
                     <view key="view" contentMode="scaleToFill" id="8Rh-qe-dmb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello ^^! Đây là màn hình Main" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvy-2O-KF9">
+                                <rect key="frame" x="72.5" y="273" width="230" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Cu-o8-a0P">
+                                <rect key="frame" x="136" y="304" width="103" height="41"/>
+                                <color key="backgroundColor" red="0.0" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="Đăng xuất">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Cu-o8-a0P" firstAttribute="centerX" secondItem="8Rh-qe-dmb" secondAttribute="centerX" id="1GL-Ka-DHn"/>
+                            <constraint firstItem="tvy-2O-KF9" firstAttribute="centerX" secondItem="8Rh-qe-dmb" secondAttribute="centerX" id="NCS-vP-BBa"/>
+                            <constraint firstItem="6Cu-o8-a0P" firstAttribute="top" secondItem="tvy-2O-KF9" secondAttribute="bottom" constant="10" id="j5i-9r-2QT"/>
+                            <constraint firstItem="tvy-2O-KF9" firstAttribute="centerY" secondItem="8Rh-qe-dmb" secondAttribute="centerY" constant="-50" id="zWo-e9-qss"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bFp-ZB-Cg2"/>
                     </view>
+                    <connections>
+                        <outlet property="logoutBtn" destination="6Cu-o8-a0P" id="8A4-dQ-LjM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xm6-eE-uae" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

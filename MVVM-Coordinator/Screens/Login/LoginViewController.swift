@@ -23,6 +23,8 @@ class LoginViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        usernameTF.text = "duc@gmail.com"
+        passwordTF.text = "123123"
     }
 
     override func setupRx() {
@@ -32,16 +34,22 @@ class LoginViewController: BaseViewController {
                                          registerTrigger: registerBtn.rx.tap.asObservable(),
                                          forgotPasswordTrigger: forgotPasswordBtn.rx.tap.asObservable())
         let output = viewModel.transform(input: input)
+
         output.loading
-            .bind { isLoading in
+            .bind { [weak self] isLoading in
+                guard let `self` = self else { return }
                 self.svIndicator.isShow(isLoading)
             }.disposed(by: bag)
+
         output.error
-            .bind { error in
+            .bind { [weak self] error in
+                guard let `self` = self else { return }
                 self.showErrorAlert(error.message)
             }.disposed(by: bag)
+
         output.validate
-            .bind { validate in
+            .bind { [weak self] validate in
+                guard let `self` = self else { return }
                 self.loginBtn.isEnabled = validate.isPass
                 self.usernameValidateLabel.text = validate.emailError
                 self.passwordValidateLabel.text = validate.passwordError

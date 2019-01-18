@@ -8,9 +8,11 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 class MainViewModel: BaseViewModel, ViewModelType {
     struct Input {
+        let logoutTrigger: Observable<Void>
     }
 
     struct Output {
@@ -25,7 +27,23 @@ class MainViewModel: BaseViewModel, ViewModelType {
     }
 
     func transform(input: Input) -> Output {
+        input.logoutTrigger
+            .flatMapLatest({ _ -> Driver<Void> in
+                return self.logout()
+            })
+            .bind(to: coordinator.logoutTrigger)
+            .disposed(by: bag)
+
         return Output(loading: trackingIndicator.asObservable(),
                       error: trackingError.asObservable())
+    }
+
+    private func logout() -> Driver<Void> {
+        return RequestManager
+            .shared
+            .logout()
+            .trackError(self.trackingError)
+            .trackActivity(self.trackingIndicator)
+            .asDriverOnErrorJustComplete()
     }
 }

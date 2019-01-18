@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 class RegisterViewModel: BaseViewModel, ViewModelType {
     struct Input {
@@ -37,7 +38,7 @@ class RegisterViewModel: BaseViewModel, ViewModelType {
     func transform(input: Input) -> Output {
         input.registerTrigger
             .withLatestFrom(input.dataCombine())
-            .flatMapLatest { (username, password) -> Observable<LoginResponse> in
+            .flatMapLatest { (username, password) -> Driver<LoginResponse> in
                 return self.performRequestRegister(username: username, password: password)
             }
             .bind(to: self.coordinator.registerCompleted)
@@ -51,11 +52,12 @@ class RegisterViewModel: BaseViewModel, ViewModelType {
                       error: trackingError.asObservable())
     }
 
-    private func performRequestRegister(username: String, password: String) -> Observable<LoginResponse> {
+    private func performRequestRegister(username: String, password: String) -> Driver<LoginResponse> {
         return RequestManager
             .shared
             .register(userName: username, password: password)
             .trackError(self.trackingError)
             .trackActivity(self.trackingIndicator)
+            .asDriverOnErrorJustComplete()
     }
 }

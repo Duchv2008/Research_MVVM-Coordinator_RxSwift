@@ -13,6 +13,8 @@ class MainCoordinator: BaseCoordinator<Void> {
     private var window: UIWindow!
     private var isHasAnimation: Bool
 
+    var logoutTrigger = PublishSubject<Void>()
+
     init(window: UIWindow, isHasAnimation: Bool = true) {
         self.window = window
         self.isHasAnimation = isHasAnimation
@@ -31,6 +33,19 @@ class MainCoordinator: BaseCoordinator<Void> {
         window.set(rootViewController: registerNavigation,
                    withTransition: isHasAnimation ? AppDelegate.shared?.changeViewAnimation : nil)
         self.window.makeKeyAndVisible()
+
+        logoutTrigger
+            .asObservable()
+            .bind { [weak self] in
+                guard let `self` = self else { return }
+                self.redirectoLogin()
+            }.disposed(by: bag)
+
         return Observable.never()
+    }
+
+    private func redirectoLogin() {
+        let loginCoordinator = LoginCoordinator(window: self.window)
+        coordinate(to: loginCoordinator).subscribe().disposed(by: bag)
     }
 }

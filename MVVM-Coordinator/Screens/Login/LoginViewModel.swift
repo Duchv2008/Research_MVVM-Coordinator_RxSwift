@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 class LoginViewModel: BaseViewModel, ViewModelType {
     struct Input {
@@ -43,7 +44,9 @@ class LoginViewModel: BaseViewModel, ViewModelType {
     }
 
     func transform(input: Input) -> Output {
-        let validation = input.dataCombine()
+        let dataCombine = input.dataCombine()
+
+        let validation = dataCombine
             .flatMap { username, password -> Observable<Validate> in
                 let validateEmail = Validator.isValidEmail(email: username)
                 let validatePassword = Validator.isValidPassword(password: password)
@@ -53,9 +56,9 @@ class LoginViewModel: BaseViewModel, ViewModelType {
                 return Observable.just(result)
             }
 
-        input.loginTrigger
-            .withLatestFrom(input.dataCombine())
-            .flatMapLatest { (username, password) -> Observable<LoginResponse> in
+       input.loginTrigger
+            .withLatestFrom(dataCombine)
+            .flatMap { (username, password) -> Driver<LoginResponse> in
                 return self.performRequestLogin(username: username, password: password)
             }
             .bind(to: self.coordinator.completedLogin)
@@ -78,11 +81,12 @@ class LoginViewModel: BaseViewModel, ViewModelType {
                       validate: validation)
     }
 
-    private func performRequestLogin(username: String, password: String) -> Observable<LoginResponse> {
+    private func performRequestLogin(username: String, password: String) -> Driver<LoginResponse> {
         return RequestManager
             .shared
             .login(userName: username, password: password)
             .trackError(self.trackingError)
-            .trackActivity(self.trackingIndicator)
+            .trackActivity(trackingIndicator)
+            .asDriverOnErrorJustComplete()
     }
 }
