@@ -21,6 +21,30 @@ extension UIViewController {
         }
     }
 
+    func showMessageAlertWithCancel(title: String?, message: String?, action: (() -> Void)? = nil) {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Common.OK".localized, style: .default) { _ in
+            action?()
+        }
+        let cancelAction = UIAlertAction(title: "Common.Cancel".localized, style: .cancel)
+        alertVC.addAction(cancelAction)
+        alertVC.addAction(okAction)
+        DispatchQueue.main.async {
+            self.present(alertVC, animated: true, completion: nil)
+        }
+    }
+
+    func showMessageAlert(title: String?, message: String?, action: (() -> Void)? = nil) {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Common.OK".localized, style: .default) { _ in
+            action?()
+        }
+        alertVC.addAction(okAction)
+        DispatchQueue.main.async {
+            self.present(alertVC, animated: true, completion: nil)
+        }
+    }
+
     func showProgress(onView: UIView? = nil) {
         DispatchQueue.main.async {
             let containerView = onView ?? (AppDelegate.shared?.window ?? self.view)
@@ -36,6 +60,8 @@ extension UIViewController {
             SVProgressHUD.dismiss()
         }
     }
+
+
 }
 
 

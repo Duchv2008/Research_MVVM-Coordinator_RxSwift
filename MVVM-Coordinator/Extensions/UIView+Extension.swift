@@ -40,4 +40,14 @@ extension UIView {
         shape.path = maskPath.cgPath
         layer.mask = shape
     }
+
+    func circle() {
+        let radius = self.frame.height / 2
+        self.rounded(radius: radius)
+    }
+
+    func border(borderWidth: CGFloat, borderColor: UIColor) {
+        self.layer.borderWidth = borderWidth
+        self.layer.borderColor = borderColor.cgColor
+    }
 }

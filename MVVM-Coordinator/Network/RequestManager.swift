@@ -36,9 +36,9 @@ class RequestManager {
     }
 
     /// Base request response Json([String: Any])
-    private func baseRequestAPI(url: Router) -> Observable<[String: Any]> {
+    func baseRequestAPI(url: Router) -> Observable<[String: Any]> {
         return Observable.create({ observer -> Disposable in
-            self.sessionManager.request(url).validate()
+            self.sessionManager.request(url)
                 .responseJSON(completionHandler: { response in
                     switch response.result {
                     case .success(let value):
@@ -49,19 +49,8 @@ class RequestManager {
                         }
                         observer.onNext(json)
                     case .failure(let error):
-                        Logger.logRequest(urlRequest: url.urlRequest, param: url.paramater, msg: error)
-                        if error._code == NSURLErrorTimedOut {
-                            let apiErr = ApiError(errCode: HTTPStatusCode.code408.rawValue,
-                                                  message: HTTPStatusCode.code408.message)
-                            observer.onError(apiErr)
-                        } else {
-                            guard let httpStatus = response.response?.statusCode,
-                                let status = HTTPStatusCode(rawValue: httpStatus) else {
-                                observer.onError(Constant.MappingObjectError)
-                                return
-                            }
-                            observer.onError(ApiError(errCode: status.rawValue, message: status.message))
-                        }
+                        let error = self.handleErrorResponse(error: error, response: response, url: url)
+                        observer.onError(error)
                     }
                     observer.onCompleted()
                 })
@@ -70,9 +59,9 @@ class RequestManager {
     }
 
     /// Base request response Mappalbe of ObjectMapper
-    private func baseRequestAPI<T: Mappable>(url: Router) -> Observable<T> {
+    func baseRequestAPI<T: Mappable>(url: Router) -> Observable<T> {
         return Observable.create({ observer -> Disposable in
-            self.sessionManager.request(url).validate()
+            self.sessionManager.request(url)
                 .responseJSON(completionHandler: { response in
                     switch response.result {
                     case .success(let value):
@@ -83,24 +72,78 @@ class RequestManager {
                         }
                         observer.onNext(mapper)
                     case .failure(let error):
-                        Logger.logRequest(urlRequest: url.urlRequest, param: url.paramater, msg: error)
-                        if error._code == NSURLErrorTimedOut {
-                            let apiErr = ApiError(errCode: HTTPStatusCode.code408.rawValue,
-                                                    message: HTTPStatusCode.code408.message)
-                            observer.onError(apiErr)
-                        } else {
-                            guard let httpStatus = response.response?.statusCode,
-                                let status = HTTPStatusCode(rawValue: httpStatus) else {
-                                    observer.onError(Constant.MappingObjectError)
-                                    return
-                            }
-                            observer.onError(ApiError(errCode: status.rawValue, message: status.message))
-                        }
+                        let error = self.handleErrorResponse(error: error, response: response, url: url)
+                        observer.onError(error)
                     }
                     observer.onCompleted()
                 })
             return Disposables.create()
         })
+    }
+
+    func baseUploadMedia(url: Router, media: Data, fileName: String? = nil, mimeType: String = "video/mp4") -> Observable<[[String: Any]]> {
+        let newFileName = fileName ?? String(format: "%d", Int(Date().timeIntervalSince1970))
+        return Observable.create({ observer -> Disposable in
+            self.sessionManager.upload(multipartFormData: { (multipart) in
+                multipart.append(media, withName: "File", fileName: newFileName, mimeType: mimeType)
+            }, with: url, encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    upload.responseJSON { response in
+                        switch response.result {
+                        case .success(let value):
+                            Logger.logRequest(urlRequest: url.urlRequest, param: url.paramater, msg: value)
+                            guard let json = value as? [[String: Any]] else {
+                                observer.onError(Constant.MappingObjectError)
+                                return
+                            }
+                            observer.onNext(json)
+                        case .failure(let error):
+                            let error = self.handleErrorResponse(error: error, response: response, url: url)
+                            observer.onError(error)
+                        }
+                        observer.onCompleted()
+                    }
+                case .failure(let encodingError):
+                    observer.onError(ApiError(errCode: HTTPStatusCode.codeMapping.rawValue, message: encodingError.localizedDescription))
+                    observer.onCompleted()
+                }
+            })
+            return Disposables.create()
+        })
+    }
+
+    private func handleErrorResponse(error: Error, response: DataResponse<Any>, url: Router) -> ApiError {
+        if error._code == NSURLErrorTimedOut {
+            Logger.logRequest(urlRequest: url.urlRequest, param: url.paramater, msg: error.localizedDescription)
+            return ApiError(errCode: HTTPStatusCode.code408.rawValue, message: HTTPStatusCode.code408.message)
+        } else {
+            guard let data = response.data else {
+                guard let httpStatus = response.response?.statusCode, let status = HTTPStatusCode(rawValue: httpStatus) else {
+                    return Constant.MappingObjectError
+                }
+                Logger.logRequest(urlRequest: url.urlRequest, param: url.paramater, msg: error.localizedDescription)
+                return ApiError(errCode: status.rawValue, message: status.message)
+            }
+
+            do {
+                if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [String: Any] {
+                    Logger.logRequest(urlRequest: url.urlRequest, param: url.paramater, msg: jsonArray)
+                    if let code = jsonArray["code"] as? Int, let message = jsonArray["message"] as? String {
+                        return ApiError(errCode: code, message: message)
+                    } else {
+                        return Constant.MappingObjectError
+                    }
+                } else {
+                    Logger.logRequest(urlRequest: url.urlRequest, param: url.paramater, msg: error.localizedDescription)
+                    return Constant.MappingObjectError
+                }
+            } catch let error as NSError {
+
+                Logger.logRequest(urlRequest: url.urlRequest, param: url.paramater, msg: error.localizedDescription)
+                return ApiError(errCode: response.response?.statusCode ?? 0, message: error.localizedDescription)
+            }
+        }
     }
 }
 
