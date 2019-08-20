@@ -128,6 +128,8 @@
 		ABC41E03230BEC9000C696C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60D1253121EF22C100AE5388 /* Main.storyboard */; };
 		ABC41E04230BEC9000C696C4 /* TutorialCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60438BB121F165BD0047FD67 /* TutorialCollectionViewCell.xib */; };
 		ABC41E05230BEC9000C696C4 /* FirebaseRemoteConfigDefault.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABC41DC2230BE95B00C696C4 /* FirebaseRemoteConfigDefault.plist */; };
+		ABC41E1F230BEF6A00C696C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABC41E22230BEF6A00C696C4 /* Localizable.strings */; };
+		ABC41E20230BEF6A00C696C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABC41E22230BEF6A00C696C4 /* Localizable.strings */; };
 		D6E360DF0A592CAFCFC78C7D /* Pods_MVVM_CoordinatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 924A7DBA7A03A6BE72DECE5E /* Pods_MVVM_CoordinatorTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -222,6 +224,8 @@
 		ABC41DC4230BEAA300C696C4 /* PushNotificationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationResponse.swift; sourceTree = "<group>"; };
 		ABC41E0A230BEC9000C696C4 /* MVVM-Coordinator-Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM-Coordinator-Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABC41E0B230BEC9000C696C4 /* MVVM-Coordinator-Dev.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MVVM-Coordinator-Dev.plist"; path = "/Users/nhocbangchu95/Desktop/workspace/Research_MVVM-Coordinator_RxSwift/MVVM-Coordinator-Dev.plist"; sourceTree = "<absolute>"; };
+		ABC41E21230BEF6A00C696C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ABC41E23230BEF7700C696C4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C3327E98C9DCB6821DED487F /* Pods-MVVM-CoordinatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-CoordinatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM-CoordinatorTests/Pods-MVVM-CoordinatorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DD408B836216295CDC07A8DF /* Pods-MVVM-CoordinatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-CoordinatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM-CoordinatorUITests/Pods-MVVM-CoordinatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E6F0E963BE2666E8AE0B163B /* Pods-MVVM-Coordinator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-Coordinator.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM-Coordinator/Pods-MVVM-Coordinator.release.xcconfig"; sourceTree = "<group>"; };
@@ -478,6 +482,7 @@
 				60D1253621EF22C200AE5388 /* LaunchScreen.storyboard */,
 				60D1253921EF22C200AE5388 /* Info.plist */,
 				ABC41DC2230BE95B00C696C4 /* FirebaseRemoteConfigDefault.plist */,
+				ABC41E22230BEF6A00C696C4 /* Localizable.strings */,
 			);
 			path = "MVVM-Coordinator";
 			sourceTree = "<group>";
@@ -640,6 +645,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 60D1252121EF22C100AE5388;
 			productRefGroup = 60D1252B21EF22C100AE5388 /* Products */;
@@ -662,6 +668,7 @@
 				60D1253821EF22C200AE5388 /* LaunchScreen.storyboard in Resources */,
 				60D1253521EF22C200AE5388 /* Assets.xcassets in Resources */,
 				602A926121F06D460080A896 /* Tutorial.storyboard in Resources */,
+				ABC41E1F230BEF6A00C696C4 /* Localizable.strings in Resources */,
 				60D1253321EF22C100AE5388 /* Main.storyboard in Resources */,
 				60438BB321F165BD0047FD67 /* TutorialCollectionViewCell.xib in Resources */,
 				ABC41DC3230BE95B00C696C4 /* FirebaseRemoteConfigDefault.plist in Resources */,
@@ -689,6 +696,7 @@
 				ABC41E00230BEC9000C696C4 /* LaunchScreen.storyboard in Resources */,
 				ABC41E01230BEC9000C696C4 /* Assets.xcassets in Resources */,
 				ABC41E02230BEC9000C696C4 /* Tutorial.storyboard in Resources */,
+				ABC41E20230BEF6A00C696C4 /* Localizable.strings in Resources */,
 				ABC41E03230BEC9000C696C4 /* Main.storyboard in Resources */,
 				ABC41E04230BEC9000C696C4 /* TutorialCollectionViewCell.xib in Resources */,
 				ABC41E05230BEC9000C696C4 /* FirebaseRemoteConfigDefault.plist in Resources */,
@@ -989,6 +997,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		ABC41E22230BEF6A00C696C4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABC41E21230BEF6A00C696C4 /* en */,
+				ABC41E23230BEF7700C696C4 /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -996,6 +1013,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1057,6 +1075,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
