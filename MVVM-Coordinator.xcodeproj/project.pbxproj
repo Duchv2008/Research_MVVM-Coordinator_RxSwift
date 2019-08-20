@@ -69,6 +69,65 @@
 		ABC41DC1230BE80700C696C4 /* RemoteConfigFirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC41DC0230BE80700C696C4 /* RemoteConfigFirebaseManager.swift */; };
 		ABC41DC3230BE95B00C696C4 /* FirebaseRemoteConfigDefault.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABC41DC2230BE95B00C696C4 /* FirebaseRemoteConfigDefault.plist */; };
 		ABC41DC5230BEAA300C696C4 /* PushNotificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC41DC4230BEAA300C696C4 /* PushNotificationResponse.swift */; };
+		ABC41DC9230BEC9000C696C4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D1252F21EF22C100AE5388 /* MainViewController.swift */; };
+		ABC41DCA230BEC9000C696C4 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602A925221F034670080A896 /* MainCoordinator.swift */; };
+		ABC41DCB230BEC9000C696C4 /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6058BA3321EF2A6700242649 /* RegisterCoordinator.swift */; };
+		ABC41DCC230BEC9000C696C4 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6058BA2B21EF27D300242649 /* LoginCoordinator.swift */; };
+		ABC41DCD230BEC9000C696C4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA68ED21EF25C8000ED085 /* AppCoordinator.swift */; };
+		ABC41DCE230BEC9000C696C4 /* RemoteConfigFirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC41DC0230BE80700C696C4 /* RemoteConfigFirebaseManager.swift */; };
+		ABC41DCF230BEC9000C696C4 /* ForgotPasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602A925921F03B7B0080A896 /* ForgotPasswordCoordinator.swift */; };
+		ABC41DD0230BEC9000C696C4 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA68FF21EF2BCA000ED085 /* ActivityIndicator.swift */; };
+		ABC41DD1230BEC9000C696C4 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA691221EF2CED000ED085 /* NSObject+Extension.swift */; };
+		ABC41DD2230BEC9000C696C4 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA68F321EF2BCA000ED085 /* Router.swift */; };
+		ABC41DD3230BEC9000C696C4 /* BasePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA691621EF2CED000ED085 /* BasePopup.swift */; };
+		ABC41DD4230BEC9000C696C4 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA691721EF2CED000ED085 /* String+Extension.swift */; };
+		ABC41DD5230BEC9000C696C4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6058BA2D21EF287100242649 /* LoginViewModel.swift */; };
+		ABC41DD6230BEC9000C696C4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA691021EF2CED000ED085 /* UIColor+Extension.swift */; };
+		ABC41DD7230BEC9000C696C4 /* Observable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA68FD21EF2BCA000ED085 /* Observable+Extension.swift */; };
+		ABC41DD8230BEC9000C696C4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6058BA2721EF265B00242649 /* RegisterViewController.swift */; };
+		ABC41DD9230BEC9000C696C4 /* NetworkRequestConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA68F221EF2BCA000ED085 /* NetworkRequestConstant.swift */; };
+		ABC41DDA230BEC9000C696C4 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602A925521F03AC00080A896 /* ForgotPasswordViewController.swift */; };
+		ABC41DDB230BEC9000C696C4 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA691521EF2CED000ED085 /* UIViewController+Extension.swift */; };
+		ABC41DDC230BEC9000C696C4 /* TutorialCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602A926621F070560080A896 /* TutorialCoordinator.swift */; };
+		ABC41DDD230BEC9000C696C4 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6058BA2121EF25F100242649 /* BaseCoordinator.swift */; };
+		ABC41DDE230BEC9000C696C4 /* AppSercurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA68FA21EF2BCA000ED085 /* AppSercurity.swift */; };
+		ABC41DDF230BEC9000C696C4 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA690F21EF2CED000ED085 /* UIImageView+Extension.swift */; };
+		ABC41DE0230BEC9000C696C4 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602A925E21F06D3B0080A896 /* TutorialViewController.swift */; };
+		ABC41DE1230BEC9000C696C4 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA690E21EF2CED000ED085 /* UIApplication+Extension.swift */; };
+		ABC41DE2230BEC9000C696C4 /* IndicatorCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA68F021EF2BCA000ED085 /* IndicatorCustomView.swift */; };
+		ABC41DE3230BEC9000C696C4 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA691121EF2CED000ED085 /* Date+Extension.swift */; };
+		ABC41DE4230BEC9000C696C4 /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA68FE21EF2BCA000ED085 /* ErrorTracker.swift */; };
+		ABC41DE5230BEC9000C696C4 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA68F421EF2BCA000ED085 /* RequestManager.swift */; };
+		ABC41DE6230BEC9000C696C4 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6058BA3521EF2A9A00242649 /* BaseViewModel.swift */; };
+		ABC41DE7230BEC9000C696C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D1252D21EF22C100AE5388 /* AppDelegate.swift */; };
+		ABC41DE8230BEC9000C696C4 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602A925B21F059BC0080A896 /* Validator.swift */; };
+		ABC41DE9230BEC9000C696C4 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA68F821EF2BCA000ED085 /* ApiError.swift */; };
+		ABC41DEA230BEC9000C696C4 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602A925721F03ACC0080A896 /* ForgotPasswordViewModel.swift */; };
+		ABC41DEB230BEC9000C696C4 /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA691821EF2CED000ED085 /* UIStoryboard+Extension.swift */; };
+		ABC41DEC230BEC9000C696C4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6058BA2421EF264D00242649 /* LoginViewController.swift */; };
+		ABC41DED230BEC9000C696C4 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA692A21EF2D43000ED085 /* ViewModelType.swift */; };
+		ABC41DEE230BEC9000C696C4 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA68F721EF2BCA000ED085 /* LoginResponse.swift */; };
+		ABC41DEF230BEC9000C696C4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA690B21EF2BE6000ED085 /* Logger.swift */; };
+		ABC41DF0230BEC9000C696C4 /* TutorialCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60438BB021F165BD0047FD67 /* TutorialCollectionViewCell.swift */; };
+		ABC41DF1230BEC9000C696C4 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA691321EF2CED000ED085 /* UIView+Extension.swift */; };
+		ABC41DF2230BEC9000C696C4 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA691421EF2CED000ED085 /* UIImage+Extension.swift */; };
+		ABC41DF3230BEC9000C696C4 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6058BA3121EF2A5400242649 /* RegisterViewModel.swift */; };
+		ABC41DF4230BEC9000C696C4 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA691921EF2CED000ED085 /* UICollectionView+Extension.swift */; };
+		ABC41DF5230BEC9000C696C4 /* TutorialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602A926421F070270080A896 /* TutorialViewModel.swift */; };
+		ABC41DF6230BEC9000C696C4 /* AuthenticateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA68F521EF2BCA000ED085 /* AuthenticateHandler.swift */; };
+		ABC41DF7230BEC9000C696C4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA68CC21EF2421000ED085 /* BaseViewController.swift */; };
+		ABC41DF8230BEC9000C696C4 /* PushNotificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC41DC4230BEAA300C696C4 /* PushNotificationResponse.swift */; };
+		ABC41DF9230BEC9000C696C4 /* UIOutlet+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA691A21EF2CED000ED085 /* UIOutlet+Extension.swift */; };
+		ABC41DFA230BEC9000C696C4 /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA68BA21EF240E000ED085 /* GlobalConstant.swift */; };
+		ABC41DFB230BEC9000C696C4 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602A925021F0345B0080A896 /* MainViewModel.swift */; };
+		ABC41DFC230BEC9000C696C4 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA691B21EF2CED000ED085 /* UITableView+Extension.swift */; };
+		ABC41DFE230BEC9000C696C4 /* Pods_MVVM_Coordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F980DBB2380C298541C0D2F /* Pods_MVVM_Coordinator.framework */; };
+		ABC41E00230BEC9000C696C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60D1253621EF22C200AE5388 /* LaunchScreen.storyboard */; };
+		ABC41E01230BEC9000C696C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60D1253421EF22C200AE5388 /* Assets.xcassets */; };
+		ABC41E02230BEC9000C696C4 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 602A926021F06D460080A896 /* Tutorial.storyboard */; };
+		ABC41E03230BEC9000C696C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60D1253121EF22C100AE5388 /* Main.storyboard */; };
+		ABC41E04230BEC9000C696C4 /* TutorialCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60438BB121F165BD0047FD67 /* TutorialCollectionViewCell.xib */; };
+		ABC41E05230BEC9000C696C4 /* FirebaseRemoteConfigDefault.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABC41DC2230BE95B00C696C4 /* FirebaseRemoteConfigDefault.plist */; };
 		D6E360DF0A592CAFCFC78C7D /* Pods_MVVM_CoordinatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 924A7DBA7A03A6BE72DECE5E /* Pods_MVVM_CoordinatorTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -161,6 +220,8 @@
 		ABC41DC0230BE80700C696C4 /* RemoteConfigFirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigFirebaseManager.swift; sourceTree = "<group>"; };
 		ABC41DC2230BE95B00C696C4 /* FirebaseRemoteConfigDefault.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FirebaseRemoteConfigDefault.plist; sourceTree = "<group>"; };
 		ABC41DC4230BEAA300C696C4 /* PushNotificationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationResponse.swift; sourceTree = "<group>"; };
+		ABC41E0A230BEC9000C696C4 /* MVVM-Coordinator-Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM-Coordinator-Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABC41E0B230BEC9000C696C4 /* MVVM-Coordinator-Dev.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MVVM-Coordinator-Dev.plist"; path = "/Users/nhocbangchu95/Desktop/workspace/Research_MVVM-Coordinator_RxSwift/MVVM-Coordinator-Dev.plist"; sourceTree = "<absolute>"; };
 		C3327E98C9DCB6821DED487F /* Pods-MVVM-CoordinatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-CoordinatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM-CoordinatorTests/Pods-MVVM-CoordinatorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DD408B836216295CDC07A8DF /* Pods-MVVM-CoordinatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-CoordinatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM-CoordinatorUITests/Pods-MVVM-CoordinatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E6F0E963BE2666E8AE0B163B /* Pods-MVVM-Coordinator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-Coordinator.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM-Coordinator/Pods-MVVM-Coordinator.release.xcconfig"; sourceTree = "<group>"; };
@@ -189,6 +250,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				05D7482781BCC93D97CFB819 /* Pods_MVVM_CoordinatorUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABC41DFD230BEC9000C696C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABC41DFE230BEC9000C696C4 /* Pods_MVVM_Coordinator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +444,7 @@
 				60D1252B21EF22C100AE5388 /* Products */,
 				76813798EE6CC20EBBB766CD /* Pods */,
 				9FBF56D0F54BABE6CCFDD199 /* Frameworks */,
+				ABC41E0B230BEC9000C696C4 /* MVVM-Coordinator-Dev.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -384,6 +454,7 @@
 				60D1252A21EF22C100AE5388 /* MVVM-Coordinator.app */,
 				60D1253E21EF22C200AE5388 /* MVVM-CoordinatorTests.xctest */,
 				60D1254921EF22C200AE5388 /* MVVM-CoordinatorUITests.xctest */,
+				ABC41E0A230BEC9000C696C4 /* MVVM-Coordinator-Dev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -520,6 +591,25 @@
 			productReference = 60D1254921EF22C200AE5388 /* MVVM-CoordinatorUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		ABC41DC6230BEC9000C696C4 /* MVVM-Coordinator-Dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABC41E07230BEC9000C696C4 /* Build configuration list for PBXNativeTarget "MVVM-Coordinator-Dev" */;
+			buildPhases = (
+				ABC41DC7230BEC9000C696C4 /* [CP] Check Pods Manifest.lock */,
+				ABC41DC8230BEC9000C696C4 /* Sources */,
+				ABC41DFD230BEC9000C696C4 /* Frameworks */,
+				ABC41DFF230BEC9000C696C4 /* Resources */,
+				ABC41E06230BEC9000C696C4 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MVVM-Coordinator-Dev";
+			productName = "MVVM-Coordinator";
+			productReference = ABC41E0A230BEC9000C696C4 /* MVVM-Coordinator-Dev.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -557,6 +647,7 @@
 			projectRoot = "";
 			targets = (
 				60D1252921EF22C100AE5388 /* MVVM-Coordinator */,
+				ABC41DC6230BEC9000C696C4 /* MVVM-Coordinator-Dev */,
 				60D1253D21EF22C200AE5388 /* MVVM-CoordinatorTests */,
 				60D1254821EF22C200AE5388 /* MVVM-CoordinatorUITests */,
 			);
@@ -588,6 +679,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABC41DFF230BEC9000C696C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABC41E00230BEC9000C696C4 /* LaunchScreen.storyboard in Resources */,
+				ABC41E01230BEC9000C696C4 /* Assets.xcassets in Resources */,
+				ABC41E02230BEC9000C696C4 /* Tutorial.storyboard in Resources */,
+				ABC41E03230BEC9000C696C4 /* Main.storyboard in Resources */,
+				ABC41E04230BEC9000C696C4 /* TutorialCollectionViewCell.xib in Resources */,
+				ABC41E05230BEC9000C696C4 /* FirebaseRemoteConfigDefault.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +740,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABC41DC7230BEC9000C696C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MVVM-Coordinator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABC41E06230BEC9000C696C4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MVVM-Coordinator/Pods-MVVM-Coordinator-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MVVM-Coordinator/Pods-MVVM-Coordinator-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MVVM-Coordinator/Pods-MVVM-Coordinator-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B34B003D2DAAD283A79B5B35 /* [CP] Check Pods Manifest.lock */ = {
@@ -752,6 +895,65 @@
 			buildActionMask = 2147483647;
 			files = (
 				60D1254E21EF22C200AE5388 /* MVVM_CoordinatorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABC41DC8230BEC9000C696C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABC41DC9230BEC9000C696C4 /* MainViewController.swift in Sources */,
+				ABC41DCA230BEC9000C696C4 /* MainCoordinator.swift in Sources */,
+				ABC41DCB230BEC9000C696C4 /* RegisterCoordinator.swift in Sources */,
+				ABC41DCC230BEC9000C696C4 /* LoginCoordinator.swift in Sources */,
+				ABC41DCD230BEC9000C696C4 /* AppCoordinator.swift in Sources */,
+				ABC41DCE230BEC9000C696C4 /* RemoteConfigFirebaseManager.swift in Sources */,
+				ABC41DCF230BEC9000C696C4 /* ForgotPasswordCoordinator.swift in Sources */,
+				ABC41DD0230BEC9000C696C4 /* ActivityIndicator.swift in Sources */,
+				ABC41DD1230BEC9000C696C4 /* NSObject+Extension.swift in Sources */,
+				ABC41DD2230BEC9000C696C4 /* Router.swift in Sources */,
+				ABC41DD3230BEC9000C696C4 /* BasePopup.swift in Sources */,
+				ABC41DD4230BEC9000C696C4 /* String+Extension.swift in Sources */,
+				ABC41DD5230BEC9000C696C4 /* LoginViewModel.swift in Sources */,
+				ABC41DD6230BEC9000C696C4 /* UIColor+Extension.swift in Sources */,
+				ABC41DD7230BEC9000C696C4 /* Observable+Extension.swift in Sources */,
+				ABC41DD8230BEC9000C696C4 /* RegisterViewController.swift in Sources */,
+				ABC41DD9230BEC9000C696C4 /* NetworkRequestConstant.swift in Sources */,
+				ABC41DDA230BEC9000C696C4 /* ForgotPasswordViewController.swift in Sources */,
+				ABC41DDB230BEC9000C696C4 /* UIViewController+Extension.swift in Sources */,
+				ABC41DDC230BEC9000C696C4 /* TutorialCoordinator.swift in Sources */,
+				ABC41DDD230BEC9000C696C4 /* BaseCoordinator.swift in Sources */,
+				ABC41DDE230BEC9000C696C4 /* AppSercurity.swift in Sources */,
+				ABC41DDF230BEC9000C696C4 /* UIImageView+Extension.swift in Sources */,
+				ABC41DE0230BEC9000C696C4 /* TutorialViewController.swift in Sources */,
+				ABC41DE1230BEC9000C696C4 /* UIApplication+Extension.swift in Sources */,
+				ABC41DE2230BEC9000C696C4 /* IndicatorCustomView.swift in Sources */,
+				ABC41DE3230BEC9000C696C4 /* Date+Extension.swift in Sources */,
+				ABC41DE4230BEC9000C696C4 /* ErrorTracker.swift in Sources */,
+				ABC41DE5230BEC9000C696C4 /* RequestManager.swift in Sources */,
+				ABC41DE6230BEC9000C696C4 /* BaseViewModel.swift in Sources */,
+				ABC41DE7230BEC9000C696C4 /* AppDelegate.swift in Sources */,
+				ABC41DE8230BEC9000C696C4 /* Validator.swift in Sources */,
+				ABC41DE9230BEC9000C696C4 /* ApiError.swift in Sources */,
+				ABC41DEA230BEC9000C696C4 /* ForgotPasswordViewModel.swift in Sources */,
+				ABC41DEB230BEC9000C696C4 /* UIStoryboard+Extension.swift in Sources */,
+				ABC41DEC230BEC9000C696C4 /* LoginViewController.swift in Sources */,
+				ABC41DED230BEC9000C696C4 /* ViewModelType.swift in Sources */,
+				ABC41DEE230BEC9000C696C4 /* LoginResponse.swift in Sources */,
+				ABC41DEF230BEC9000C696C4 /* Logger.swift in Sources */,
+				ABC41DF0230BEC9000C696C4 /* TutorialCollectionViewCell.swift in Sources */,
+				ABC41DF1230BEC9000C696C4 /* UIView+Extension.swift in Sources */,
+				ABC41DF2230BEC9000C696C4 /* UIImage+Extension.swift in Sources */,
+				ABC41DF3230BEC9000C696C4 /* RegisterViewModel.swift in Sources */,
+				ABC41DF4230BEC9000C696C4 /* UICollectionView+Extension.swift in Sources */,
+				ABC41DF5230BEC9000C696C4 /* TutorialViewModel.swift in Sources */,
+				ABC41DF6230BEC9000C696C4 /* AuthenticateHandler.swift in Sources */,
+				ABC41DF7230BEC9000C696C4 /* BaseViewController.swift in Sources */,
+				ABC41DF8230BEC9000C696C4 /* PushNotificationResponse.swift in Sources */,
+				ABC41DF9230BEC9000C696C4 /* UIOutlet+Extension.swift in Sources */,
+				ABC41DFA230BEC9000C696C4 /* GlobalConstant.swift in Sources */,
+				ABC41DFB230BEC9000C696C4 /* MainViewModel.swift in Sources */,
+				ABC41DFC230BEC9000C696C4 /* UITableView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -920,6 +1122,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hvd.MVVM-Coordinator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = PRODUCT_DEBUG;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -939,6 +1142,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hvd.MVVM-Coordinator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = PRODUCT_RELEASE;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1030,6 +1234,46 @@
 			};
 			name = Release;
 		};
+		ABC41E08230BEC9000C696C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F27942647653FB3A12300354 /* Pods-MVVM-Coordinator.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5M8896M9A6;
+				INFOPLIST_FILE = "MVVM-Coordinator-Dev.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hvd.MVVM-Coordinator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEV_DEBUG;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ABC41E09230BEC9000C696C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6F0E963BE2666E8AE0B163B /* Pods-MVVM-Coordinator.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5M8896M9A6;
+				INFOPLIST_FILE = "MVVM-Coordinator-Dev.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hvd.MVVM-Coordinator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEV_STAGGING;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1065,6 +1309,15 @@
 			buildConfigurations = (
 				60D1255921EF22C300AE5388 /* Debug */,
 				60D1255A21EF22C300AE5388 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABC41E07230BEC9000C696C4 /* Build configuration list for PBXNativeTarget "MVVM-Coordinator-Dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABC41E08230BEC9000C696C4 /* Debug */,
+				ABC41E09230BEC9000C696C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
